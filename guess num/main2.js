@@ -1,6 +1,7 @@
 const userInput = document.getElementById('userInput');
 const checkButton = document.getElementById('checkButton');
 const result = document.getElementById('result');
+const tryAgainButton = document.createElement('button');
 
 
 // genererar Math.random
@@ -62,8 +63,10 @@ function handleGuesses() {
         result.textContent = `Tyvärr, har du inte mer försök kvar, det hemliga nummret var: ${secretNumber}`;
         disablecheckButton();
         disableuserInput();
+        showTryAgainButtton();
     }
 }
+
 
 // inaktiverar knappen 'Guess'
 function disablecheckButton() {
@@ -77,3 +80,24 @@ function disableuserInput() {
     userInput.disabled = true;
 }
 
+// visar min try again button
+function showTryAgainButtton() {
+   
+    tryAgainButton.textContent = 'Try again?'
+    tryAgainButton.addEventListener('click', tryAgain);
+
+    document.body.appendChild(tryAgainButton);
+}
+
+// försök igen funktionen
+function tryAgain() {
+    attempts = 5;
+    guesses.length = 0;
+    result.textContent = '';
+    checkButton.disabled = false;
+    userInput.disabled = false;
+    tryAgainButton.remove();
+    secretNumber = Math.floor(Math.random() * 100) + 1;
+    console.log(`The new secret number is: ${secretNumber}`)
+
+}

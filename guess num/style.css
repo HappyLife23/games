@@ -15,7 +15,7 @@ body {
 }
 .container {
   justify-content: center;
-  padding: 2rem;
+  padding: 3rem;
 }
 input {
   padding: 1rem;
@@ -25,6 +25,7 @@ input {
 }
 
 button {
+  margin-bottom: 1rem;
   padding: 1rem;
   border: none;
   border-radius: 8px;
@@ -51,4 +52,7 @@ p {
 }
 p {
   animation: fadeIn 1s ease-in-out;
+}
+.tryAgain {
+  margin-bottom: 1rem;
 }
