@@ -10,6 +10,8 @@ console.log(`The secret number is: ${secretNumber}`);
 
 
 let attempts = 5;
+
+// lagrar användarens gissningar
 const guesses = [];
  
 
@@ -24,11 +26,11 @@ userInput.addEventListener('keydown', function (event) {
 });
 
 
-// logiken 
+// logiken bakom spelet 
 function handleGuesses() {
 
 
-    if (attempts > 0) {
+    if (attempts > 0) { //kontrollerar om användaren har några försök kvar.
         const userGuesses = parseInt(userInput.value);
 
         // Loggar användarens gissade tal
@@ -44,7 +46,7 @@ function handleGuesses() {
             result.textContent = "För liten, vänligen gissa igen!"
         } 
         
-        // lägger till användarens gissning i listan
+        // lägger till användarens gissning till arrayen 'guesses'
         guesses.push(userGuesses);
     
         // uppdatera skärmen med alla användrarens gissningar
@@ -59,10 +61,19 @@ function handleGuesses() {
     }else {
         result.textContent = `Tyvärr, har du inte mer försök kvar, det hemliga nummret var: ${secretNumber}`;
         disablecheckButton();
+        disableuserInput();
     }
 }
+
+// inaktiverar knappen 'Guess'
 function disablecheckButton() {
     checkButton.disabled = true;
+    
 }
 
+// inaktiverar inputrutan
+function disableuserInput() {
+    
+    userInput.disabled = true;
+}
 
