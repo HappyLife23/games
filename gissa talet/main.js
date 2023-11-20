@@ -17,9 +17,6 @@ checkButton.classList.add('guess-button')
 checkButton.innerText = 'Gissa'
 
 
-
-
-
 const result = document.createElement('p');
 
 //–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -40,7 +37,7 @@ userInput.addEventListener('keydown', function (event) {
         letsGo();
     }
 
-})
+});
 //–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 
 // skapr en funktion som innehåller mina if-satser
@@ -80,8 +77,7 @@ function letsGo() {
         disablecheckButton(); // anropar inaktivring om min checkButton
         disableuserInput(); // anropar inaktivering av min userInput
         showTryAgainButtton(); // anropar min tryAgainButton
-   
-    }  
+       }  
     
 }
 
@@ -89,7 +85,6 @@ function letsGo() {
 container.appendChild(title);
 container.appendChild(userInput);
 container.appendChild(checkButton);
-
 container.appendChild(result);
 document.body.appendChild(container);
 
@@ -111,8 +106,6 @@ function showTryAgainButtton() {
     tryAgainButton.innerText = 'Try again?'   
     tryAgainButton.classList.add('try');
     container.appendChild(tryAgainButton);
-    
-
 }
 
 
